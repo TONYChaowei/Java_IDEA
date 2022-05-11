@@ -19,6 +19,7 @@ public class BookManage {
         if(!(book.getCount() > 1)){
             return -1;
         }
+        System.out.println();
         book.setCount(book.getCount() - 1);
         return 1;
     }
