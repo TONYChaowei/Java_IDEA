@@ -1,8 +1,8 @@
 import javax.print.DocFlavor;
 
 /**
- * ¹¤¾ßÀà
- * ²âÊÔ
+ * å·¥å…·ç±»
+ * æµ‹è¯•
  * @ author:Tony
  * @ date 2022/5/14 16:47
  * @ version 1.0
@@ -12,7 +12,7 @@ public class Tool {
     char[] invalid = {' ','\'','*','?','<','>','.'};
      static String special = "@#$!<>.";
     /**
-     * @ description:ÓÃ»§Ãû×î¶à25¸ö×Ö·û³¤¶È£¬²»ÄÜ°üº¬¿Õ¸ñ£¬µ¥Ë«ÒıºÅ ÎÊºÅµÈÌØÊâ·ûºÅ
+     * @ description:ç”¨æˆ·åæœ€å¤š25ä¸ªå­—ç¬¦é•¿åº¦ï¼Œä¸èƒ½åŒ…å«ç©ºæ ¼ï¼Œå•åŒå¼•å· é—®å·ç­‰ç‰¹æ®Šç¬¦å·
      * @ param:
      * @ return:
     */
@@ -30,60 +30,44 @@ public class Tool {
         }
 
         /**
-         * ÃÜÂë6-18Î»£¬Ö»ÄÜ°üº¬×ÖÄ¸£¬Êı×Ö£¬ÌØÊâ·ûºÅ£¨ÏÂ»®Ïß @£¬#£¬$£¬£¡£©
-         * ´¿Êı×Ö£¬´¿×ÖÄ¸£¬ÃÜÂëÇ¿¶È¶¼ÊÇÈõ **
-         * Êı×Ö + ÃÜÂë£¬Êı×Ö + ·ûºÅ£¬ Êı×Ö + ×ÖÄ¸ Ç¿¶ÈÎªÖĞ ***
-         * Í¬Ê±´æÔÚÈıÖÖ×Ö·û£¬Ç¿¶ÈÎªÇ¿ *****
+         * å¯†ç 6-18ä½ï¼Œåªèƒ½åŒ…å«å­—æ¯ï¼Œæ•°å­—ï¼Œç‰¹æ®Šç¬¦å·ï¼ˆä¸‹åˆ’çº¿ @ï¼Œ#ï¼Œ$ï¼Œï¼ï¼‰
+         * çº¯æ•°å­—ï¼Œçº¯å­—æ¯ï¼Œå¯†ç å¼ºåº¦éƒ½æ˜¯å¼± **
+         * æ•°å­— + å¯†ç ï¼Œæ•°å­— + ç¬¦å·ï¼Œ æ•°å­— + å­—æ¯ å¼ºåº¦ä¸ºä¸­ ***
+         * åŒæ—¶å­˜åœ¨ä¸‰ç§å­—ç¬¦ï¼Œå¼ºåº¦ä¸ºå¼º *****
          * @ param:
-         * @ return: Èç¹û·µ»ØÖµÎª¿Õ£¬ÄÇÃ´ÃÜÂëµÄÑéÖ¤Ê§°Ü£¬ÑéÖ¤³É¹¦£¬Ôò·µ»ØĞÇºÅ±íÊ¾ÃÜÂëÇ¿¶È
+         * @ return: å¦‚æœè¿”å›å€¼ä¸ºç©ºï¼Œé‚£ä¹ˆå¯†ç çš„éªŒè¯å¤±è´¥ï¼ŒéªŒè¯æˆåŠŸï¼Œåˆ™è¿”å›æ˜Ÿå·è¡¨ç¤ºå¯†ç å¼ºåº¦
         */
         public  String validPassword(String password){
-            String power = "";      //ÃÜÂëÇ¿¶È
+            String power = "";      //å¯†ç å¼ºåº¦
             if(password == null) return power;
-<<<<<<< HEAD
 
-=======
             if(password.length() > 18 || password.length() < 6) return power;
->>>>>>> LaoJIU
+
             for (int i = 0; i < password.length(); i++) {
-                 if(!Character.isLetterOrDigit(password.charAt(i))){        //Èç¹û²»ÊÇ×ÖÄ¸»òÊı×Ö£¬²¢ÇÒÒ²²»ÊÇºÏ·¨µÄÌØÊâ·ûºÅ£¬ÔòÖ¤Ã÷·Ç·¨¸ñÊ½
+                 if(!Character.isLetterOrDigit(password.charAt(i))){        //å¦‚æœä¸æ˜¯å­—æ¯æˆ–æ•°å­—ï¼Œå¹¶ä¸”ä¹Ÿä¸æ˜¯åˆæ³•çš„ç‰¹æ®Šç¬¦å·ï¼Œåˆ™è¯æ˜éæ³•æ ¼å¼
                      if(!special.contains(Character.toString(password.charAt(i)))){
                          return power;
                      }
                  }
-            }//ÏÂÃæ¿ªÊ¼ÅĞ¶Ï×Ö·ûÇ¿¶È
-<<<<<<< HEAD
-            if (isNumber(password) || isCharacter(password)) {
-                power = "**";
-            }else if (isCharacter(password) && isContainsSymboy(password) ){
-                power = "***";
-            }else if (isDigitAndCharacter(password)){
-                power = "*****";
-            }else if (isDigitAndSymboy(password)){
-                power = "******@";
-            }else if (isDigitAndCharacter(password) && isContainsSymboy(password)){
-                power = "*****";
-            }
-=======
-            //if, else ifÓï¾äÀï£¬Ç°Ò»¸öÅĞ¶ÏÎªfalse,²Å»áÖ´ĞĞÏÂÒ»¸öÅĞ¶Ï
-            if(isDigit(password) || isCharacter(password)){    //ÊÇ·ñÈ«²¿ÓÉÊı×Ö»òÕß×ÖÄ¸¹¹³É
-                power = "¡ï¡ï¡î¡î¡î¡î";
-            }else if(isDigitAndCharacter(password)){      //ÊÇ·ñÈ«²¿ÓÉÊı×ÖºÍ×ÖÄ¸¹¹³É
-                power = "¡ï¡ï¡ï¡ï¡î¡î";
-            }else if(isContaiDigit(password)){           //ÊÇ·ñ°üº¬Êı×Ö
-                power = "¡ï¡ï¡ï¡ï¡î¡î";
-            }else if(isContainsSymboy(password)){       //ÊÇ·ñ°üº¬ÌØÊâ·ûºÅ
-                //µ±Ç°Èı¸öÅĞ¶Ï¶¼ÎªfalseÊ±£¬²Å»áÓĞÓĞÕâ¸öÅĞ¶Ï£¬¹ÊÎªÈ«²¿°üº¬
-                power = "¡ï¡ï¡ï¡ï¡ï¡ï";
+            }//ä¸‹é¢å¼€å§‹åˆ¤æ–­å­—ç¬¦å¼ºåº¦
+
+            //if, else ifè¯­å¥é‡Œï¼Œå‰ä¸€ä¸ªåˆ¤æ–­ä¸ºfalse,æ‰ä¼šæ‰§è¡Œä¸‹ä¸€ä¸ªåˆ¤æ–­
+            if(isDigit(password) || isCharacter(password)){    //æ˜¯å¦å…¨éƒ¨ç”±æ•°å­—æˆ–è€…å­—æ¯æ„æˆ
+                power = "â˜…â˜…â˜†â˜†â˜†â˜†";
+            }else if(isDigitAndCharacter(password)){      //æ˜¯å¦å…¨éƒ¨ç”±æ•°å­—å’Œå­—æ¯æ„æˆ
+                power = "â˜…â˜…â˜…â˜…â˜†â˜†";
+            }else if(isContaiDigit(password)){           //æ˜¯å¦åŒ…å«æ•°å­—
+                power = "â˜…â˜…â˜…â˜…â˜†â˜†";
+            }else if(isContainsSymboy(password)){       //æ˜¯å¦åŒ…å«ç‰¹æ®Šç¬¦å·
+                //å½“å‰ä¸‰ä¸ªåˆ¤æ–­éƒ½ä¸ºfalseæ—¶ï¼Œæ‰ä¼šæœ‰æœ‰è¿™ä¸ªåˆ¤æ–­ï¼Œæ•…ä¸ºå…¨éƒ¨åŒ…å«
+                power = "â˜…â˜…â˜…â˜…â˜…â˜…";
             }
 
-
->>>>>>> LaoJIU
             return power;
         }
         
         /**
-         * ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ²»ÊÇÒ»¸ö´¿Êı×Ö
+         * åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯ä¸æ˜¯ä¸€ä¸ªçº¯æ•°å­—
          * @ param:
          * @ return: 
         */
@@ -97,7 +81,7 @@ public class Tool {
         }
 
         /**
-         * ÅĞ¶ÏÊÇ²»ÊÇÒ»¸ö´¿×ÖÄ¸
+         * åˆ¤æ–­æ˜¯ä¸æ˜¯ä¸€ä¸ªçº¯å­—æ¯
          * @ param:
          * @ return:
         */
@@ -111,51 +95,42 @@ public class Tool {
     }
 
     /**
-     * ÃÜÂëÖĞº¬ÓĞÌØÊâ×Ö·û
+     * å¯†ç ä¸­å«æœ‰ç‰¹æ®Šå­—ç¬¦
      * @ param:
      * @ return:
     */
     private  boolean isContainsSymboy(String password){
         for (int i = 0; i < password.length(); i++) {
-<<<<<<< HEAD
+
             if (!password.contains(Character.toString(special.charAt(i)))){
                 return false;
             }
         }
         return true;
-=======
+
             if (password.contains(Character.toString(special.charAt(i)))){
                 return true;
             }
         }
         return false;
->>>>>>> LaoJIU
-    }
+   }
     
     /**
-     * ÃÜÂëÖĞº¬ÓĞºÏ·¨×ÖÄ¸ºÍÊı×Ö
+     * å¯†ç ä¸­å«æœ‰åˆæ³•å­—æ¯å’Œæ•°å­—
      * @ param: 
      * @ return: 
     */
     private static boolean isDigitAndCharacter(String password){
         for (int i = 0; i < password.length(); i++) {
-<<<<<<< HEAD
+
             if (Character.isLetterOrDigit(password.charAt(i))){
                 return true;
             }
         }
         return false;
     }
-    private  boolean isDigitAndSymboy(String password){
-         boolean  judged =  isContainsSymboy(password);
-         boolean  judged2 = isNumber(password);
-         if(judged == true || judged2 == true ){
-             return true;
-         }
-         return false;
-    }
 
-=======
+
             if (!Character.isLetterOrDigit(password.charAt(i))){
                 return false;
             }
@@ -164,7 +139,7 @@ public class Tool {
     }
 
     /**
-     * ÃÜÂëÖĞÊÇ·ñ°üº¬Êı×Ö
+     * å¯†ç ä¸­æ˜¯å¦åŒ…å«æ•°å­—
      * @ param:
      * @ return:
     */
@@ -177,6 +152,6 @@ public class Tool {
     }
 
 
->>>>>>> LaoJIU
+
 
 }
