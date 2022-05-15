@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Ö÷·½·¨
+ * ä¸»æ–¹æ³•
  * @ author:Tony
  * @ date 2022/5/14 16:37
  * @ version 1.0
@@ -10,52 +10,33 @@ import java.util.Scanner;
 public class UserMain {
     public static void main(String[] args) {
         Tool tool = new Tool();
-<<<<<<< HEAD
-=======
         User user = new User();
->>>>>>> LaoJIU
+
         boolean judged;
         Scanner input = new Scanner(System.in);
-        System.out.println("ÇëÉè¶¨êÇ³Æ");
+        System.out.println("è¯·è®¾å®šæ˜µç§°");
         String username = input.nextLine();
         judged = tool.isCorrectUserName(username);
         while (!judged){
-            System.out.println("ÇëÖØĞÂÉè¶¨êÇ³Æ£¬²»ÄÜº¬ÓĞ¿Õ¸ñ µ¥Ë«ÒıºÅ ÎÊºÅ *ºÅµÈÌØÊâ·ûºÅÓ´");
+            System.out.println("è¯·é‡æ–°è®¾å®šæ˜µç§°ï¼Œä¸èƒ½å«æœ‰ç©ºæ ¼ å•åŒå¼•å· é—®å· *å·ç­‰ç‰¹æ®Šç¬¦å·å“Ÿ");
             String usernames = input.nextLine();
             judged = tool.isCorrectUserName(usernames);
-<<<<<<< HEAD
-        }
-       while (true){
-           System.out.println("ÇëÉè¶¨ÃÜÂë");
+
+
+           System.out.println("è¯·è®¾å®šå¯†ç ");
            String password = input.nextLine();
            String power = tool.validPassword(password);
-           while (power == "" || power ==null){
-               System.out.println("ÇëÖØĞÂÉè¶¨ÃÜÂë");
-               String passwords = input.nextLine();
-               power = tool.validPassword(password);
-           }
-           System.out.printf("ÄúµÄÃÜÂë°²È«µÈ¼¶£º%s\n",power);
-       }
-        //System.out.println("ÇëÊäÈëµç×ÓÓÊÏä");
-        //String email = input.nextLine();
-
-            username = usernames;
-        }
-
-           System.out.println("ÇëÉè¶¨ÃÜÂë");
-           String password = input.nextLine();
-           String power = tool.validPassword(password);
-           while ( power == ""){   //µ±ÃÜÂëÇ¿¶ÈÎª¿ÕÊ±£¬Ôò´ú±íÓĞÎÊÌâ
-               System.out.println("ÇëÖØĞÂÉè¶¨ÃÜÂë£¬ÃÜÂë³¤¶È²»ÄÜ´óÓÚ18Î»£¬Ğ¡ÓÚ6Î»Ó´"+"\n"+ "Ö»ÄÜ°üº¬ÒÔÏÂ·ûºÅ @ # $ ! < > .");
+           while ( power == ""){   //å½“å¯†ç å¼ºåº¦ä¸ºç©ºæ—¶ï¼Œåˆ™ä»£è¡¨æœ‰é—®é¢˜
+               System.out.println("è¯·é‡æ–°è®¾å®šå¯†ç ï¼Œå¯†ç é•¿åº¦ä¸èƒ½å¤§äº18ä½ï¼Œå°äº6ä½å“Ÿ"+"\n"+ "åªèƒ½åŒ…å«ä»¥ä¸‹ç¬¦å· @ # $ ! < > .");
                String passwords = input.nextLine();
                power = tool.validPassword(passwords);
                password =passwords;
            }
-           System.out.printf("ÄúµÄÃÜÂë°²È«µÈ¼¶£º%s\n",power);
-           System.out.println("ÕËºÅ×¢²á³É¹¦£¡£¡");
+           System.out.printf("æ‚¨çš„å¯†ç å®‰å…¨ç­‰çº§ï¼š%s\n",power);
+           System.out.println("è´¦å·æ³¨å†ŒæˆåŠŸï¼ï¼");
            System.out.println(username);
            System.out.println(password);
 
->>>>>>> LaoJIU
+
     }
 }
