@@ -2,7 +2,7 @@ package LaoJIU.HeroDemo;
 
 import LaoJIU.HeroDemo.Hero;
 
-/**战士类- 继承了Hero类
+/**战士类(子类)- 继承了Hero类
  * @ author:Tony
  * @ date 2022/5/15 17:38
  * @ version 1.0
@@ -18,6 +18,7 @@ public class Warrior extends Hero {
     }
 
     public int getPysicalAttach() {
+
         return pysicalAttach;
     }
 
