@@ -13,9 +13,8 @@ public class HeroTest {
             System.out.println(libai == libai2);
             System.out.println(libai.equals(libai2));
             Archmage 貂蝉 = new Archmage("貂蝉");
-            貂蝉.biubiubiu();
-             System.out.println("级别：" + 貂蝉.getLevel());
-             System.out.println("最大生命值" + 貂蝉.getMaxLife());
+            System.out.println(貂蝉);
+
 
 
     }

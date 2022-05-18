@@ -14,8 +14,24 @@ public class Archmage extends Hero{
      }
      public Archmage(String nickname){
          this();
+         setNickname(nickname);
      }
-      public void biubiubiu(){
+
+    @Override
+    public String toString() {
+        StringBuffer str = new StringBuffer();
+        str.append(getLevel());
+        str.append("\t");
+        str.append(getNickname());
+        str.append("\t");
+        str.append(getMaxLife());
+        str.append("\t");
+        str.append(getCurrLife());
+        str.append("\t");
+        return str.toString();
+    }
+
+    public void biubiubiu(){
         System.out.println(getNickname() + "正在搓火球" );
     }
 }
