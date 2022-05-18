@@ -17,6 +17,21 @@ public class Warrior extends Hero {
         setPysicalAttach(pysicalAttach);
     }
 
+
+    @Override
+    //重写Object类的equals方法，以便比较两个对象是否相等
+    public boolean equals(Object obj) {
+        //如果传入的obj对象是warrior类的实例
+        if(!(obj instanceof Warrior)){
+            return false;
+        }
+        Warrior newwarrior = (Warrior)obj;
+        if (getNickname().equals(newwarrior.getNickname()) && getPysicalAttach() == newwarrior.getPysicalAttach()){
+            return true;
+        }
+        return false;
+    }
+
     public int getPysicalAttach() {
 
         return pysicalAttach;

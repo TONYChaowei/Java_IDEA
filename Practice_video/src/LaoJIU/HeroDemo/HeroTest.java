@@ -9,7 +9,14 @@ package LaoJIU.HeroDemo;
 public class HeroTest {
     public static void main(String[] args) {
             Warrior libai = new Warrior("李白",210);
-            System.out.println(libai.getNickname() +"\t当前生命值" + libai.getCurrLife());
+            Warrior libai2 = new Warrior("李白",210);
+            System.out.println(libai == libai2);
+            System.out.println(libai.equals(libai2));
+            Archmage 貂蝉 = new Archmage("貂蝉");
+            貂蝉.biubiubiu();
+             System.out.println("级别：" + 貂蝉.getLevel());
+             System.out.println("最大生命值" + 貂蝉.getMaxLife());
+
 
     }
 }
