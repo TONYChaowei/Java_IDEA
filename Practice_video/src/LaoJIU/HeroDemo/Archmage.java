@@ -16,7 +16,6 @@ public class Archmage extends Hero{
          this();
          setNickname(nickname);
      }
-
     @Override
     public String toString() {
         StringBuffer str = new StringBuffer();
@@ -30,7 +29,6 @@ public class Archmage extends Hero{
         str.append("\t");
         return str.toString();
     }
-
     public void biubiubiu(){
         System.out.println(getNickname() + "正在搓火球" );
     }
