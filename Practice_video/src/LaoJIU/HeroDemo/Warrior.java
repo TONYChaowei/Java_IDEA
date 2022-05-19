@@ -17,7 +17,6 @@ public class Warrior extends Hero {
         setPysicalAttach(pysicalAttach);
     }
 
-
     @Override
     //重写Object类的equals方法，以便比较两个对象是否相等
     public boolean equals(Object obj) {

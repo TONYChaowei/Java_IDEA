@@ -12,8 +12,7 @@ public class Hero {
    private int maxLife;
    private int currLife;
 
-    public Hero() {
-    }
+    public Hero() {}
 
     public Hero(String nickname, int level, int maxLife, int currLife) {
         this.nickname = nickname;
