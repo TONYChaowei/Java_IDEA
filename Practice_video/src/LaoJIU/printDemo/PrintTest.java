@@ -1,6 +1,7 @@
 package LaoJIU.printDemo;
 
 import LaoJIU.printDemo.impl.A4PaperImpl;
+import LaoJIU.printDemo.impl.B5PaperImpl;
 import LaoJIU.printDemo.impl.ColorlnkBoxImpl;
 
 /**
@@ -14,7 +15,7 @@ public class PrintTest {
          Printer printer = new Printer();
          //为打印机安装纸张和墨盒
          printer.setInkbox(new ColorlnkBoxImpl());
-         printer.setPaper(new A4PaperImpl());
+         printer.setPaper(new B5PaperImpl());
          printer.print("测试内容");
 
     }
