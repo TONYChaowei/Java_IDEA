@@ -1,5 +1,6 @@
 package LaoJIU;
 
+import Han.test;
 import sun.applet.Main;
 
 /**免检查异常
@@ -14,7 +15,10 @@ public class UnCheckedException {
 //        System.out.println(value.toString());
         //将字符串转换换为数字
         String str = "abc";
-        int value = Integer.parseInt(str);
+        //int value = Integer.parseInt(str);
+        int value = Integer.parseInt()
         System.out.println(value);
+        System.out.println();
+        System.out.println();
     }
 }
