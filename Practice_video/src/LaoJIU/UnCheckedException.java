@@ -15,8 +15,7 @@ public class UnCheckedException {
 //        System.out.println(value.toString());
         //将字符串转换换为数字
         String str = "abc";
-        //int value = Integer.parseInt(str);
-        int value = Integer.parseInt()
+        int value = Integer.parseInt(str);
         System.out.println(value);
         System.out.println();
         System.out.println();
