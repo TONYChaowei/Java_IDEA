@@ -1,7 +1,6 @@
 package LaoJIU;
 
 import Han.test;
-import sun.applet.Main;
 
 /**免检查异常
  * @ author:Tony
@@ -9,7 +8,10 @@ import sun.applet.Main;
  * @ version 1.0
  * @ description:TODO
  */
+
+
 public class UnCheckedException {
+
     public static void main(String[] args) {
 //        String value = null;    //遇到空指针异常5
 //        System.out.println(value.toString());
