@@ -9,6 +9,12 @@ import java.util.Scanner;
  * @ description:TODO
  */
 public class InputMissMatchExceptionDemo {
+    /**
+     * @ author Tony
+     * @ date 2022/6/21 21:22
+     * * @param null
+     * @ return 
+     */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("请输入一个整型");
