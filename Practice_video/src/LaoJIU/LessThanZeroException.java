@@ -7,6 +7,7 @@ package LaoJIU;
  * @ description:TODO
  */
 public class LessThanZeroException extends Exception {
+    //重写父类的两个方法即可
     private int value;
     public lessThanZeroException(){
         super("数字不能小于零！");

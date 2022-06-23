@@ -10,10 +10,10 @@ public class ThrowDemo {
     public static void main(String[] args) {
             Hero hero = new Hero("貂蝉");
         try {
-            hero.setExp(-1000);
+            hero.setExp(100);
+            hero.setHealth(100);
         } catch (Exception e) {
-            //throw new RuntimeException(e);
-           //   e.printStackTrace();
+           e.printStackTrace();
             System.err.print("在设置经验值时出现异常：" + e.getMessage());
         }
         System.out.println("当前英雄的经验值" + hero.getExp());
@@ -56,8 +56,12 @@ class Hero{
             throw new Exception("经验值不能为负数");
         }
     }
-    public static rideHorse(){
-        System.out.println(name + "正在快乐的骑马！");
+    public void rideHorse()throws LessThanZeroException{
+        if (health >= 50){
+            System.out.println(name + "正在快乐的骑马！");
+        }else
+            throw new LessThanZeroException();
+
     }
 
 }
