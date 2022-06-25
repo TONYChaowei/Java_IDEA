@@ -20,7 +20,7 @@ public class FileDemo {
         fileChooser.showOpenDialog(null);   //显示选择文件的对话框
         String pathName = fileChooser.getName();   //获得用户选择的文件
         //当前工程所在的根目录
-        File file = fileChooser.getSelectedFile();//获得用户选择的文件
+        File file = fileChooser.getSelectedFile();//获得用户选择的文件  建议使用时判断file是否为null,如果为null 表示用户点了取消
         System.out.println("文件/文件夹是否存在:" + file.exists());
         System.out.println("是不是一个文件:" + file.exists());
         System.out.println("是不是一个文件夹:" + file.isDirectory());
