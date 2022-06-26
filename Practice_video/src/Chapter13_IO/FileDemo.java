@@ -17,7 +17,8 @@ public class FileDemo {
 
     public static void main(String[] args) throws IOException {
         JFileChooser fileChooser = new JFileChooser(new File(".")); //设置文件对话框打开时的根目录
-        fileChooser.showOpenDialog(null);   //显示选择文件的对话框
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);   //显示选择文件的对话框
+        fileChooser.showOpenDialog(null);
         String pathName = fileChooser.getName();   //获得用户选择的文件
         //当前工程所在的根目录
         File file = fileChooser.getSelectedFile();//获得用户选择的文件  建议使用时判断file是否为null,如果为null 表示用户点了取消
@@ -45,10 +46,14 @@ public class FileDemo {
 //            file.createNewFile(); //创建目录
 //                System.out.println("文件重新创建成功");
 //
-//        String[] fileNames = file.list();
-//        for (int i = 0; i < fileNames.length; i++) {
-//            System.out.println(fileNames[i]);
-//        }
+        if (file.isDirectory()){
+            System.out.println(file.getAbsoluteFile() + "路径下的所有文件及文件夹");
+            String[] fileNames = file.list();
+            for (int i = 0; i < fileNames.length; i++) {
+                System.out.println(fileNames[i]);
+            }
+        }
+
 
 
         //补充：选学
