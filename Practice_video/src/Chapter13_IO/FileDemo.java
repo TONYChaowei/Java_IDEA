@@ -1,6 +1,4 @@
 package Chapter13_IO;
-
-
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
@@ -13,8 +11,6 @@ import java.util.Date;
  * @ description:TODO
  */
 public class FileDemo {
-
-
     public static void main(String[] args) throws IOException {
         JFileChooser fileChooser = new JFileChooser(new File(".")); //设置文件对话框打开时的根目录
         fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);   //显示选择文件的对话框
@@ -40,7 +36,7 @@ public class FileDemo {
 //        }
 //                if(file.exists()){
 //                file.delete();  //直接删除文件，删除的时候不用判断文件是否存在，也不报异常
-//                    //file.deleteonExit(); 在进程结束的时候把文件删除了，注意：如果在当前进程重新创建文件，最终也会被删除掉
+//                    //file.deleteExit(); 在进程结束的时候把文件删除了，注意：如果在当前进程重新创建文件，最终也会被删除掉
 //                    System.out.println("文件删除成功");
 //            }
 //            file.createNewFile(); //创建目录
@@ -58,7 +54,7 @@ public class FileDemo {
 
         //补充：选学
         /**
-         * 我们自定义的文件名过滤器，必须实现FilenameFileter接口
+         * 我们自定义的文件名过滤器，必须实现接口
          * @ author Tony
          * @ date 2022/6/25 11:05
          *  * @param args
@@ -70,10 +66,6 @@ public class FileDemo {
     }
     //mkdir() 创建此抽象路径名称指定的目录（及只能创建一级的目录，且需要存在父目录中）
     //mkdirs() 创建此抽象路径指定的目录，包括所有必须但不存在的父目录 （及可以创建多级目录，无论是否存在父目录）- 多级目录时使用
-        
-        
-
-
 
 }
 
