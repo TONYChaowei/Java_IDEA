@@ -4,6 +4,8 @@ package Chapter13_IO;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Date;
 
 /**演示File类的常用方法
@@ -24,15 +26,16 @@ public class FileDemo {
         File file = fileChooser.getSelectedFile();//获得用户选择的文件  建议使用时判断file是否为null,如果为null 表示用户点了取消
         System.out.println("文件/文件夹是否存在:" + file.exists());
         System.out.println("是不是一个文件:" + file.exists());
-        System.out.println("是不是一个文件夹:" + file.isDirectory());
+        BasicFileAttributes basicFileAttributes = Files.readAttributes(file.toPath(), BasicFileAttributes.class);
+        System.out.println("是不是一个文件夹:" + basicFileAttributes.isDirectory());
         System.out.println("文件名/目录名:" + file.getName());
         System.out.println("绝对路径:" + file.getAbsoluteFile());
         System.out.println("路径：" + file.getPath());
-        System.out.println("最后修改时间：" + new Date(file.lastModified()).toLocaleString());
+        System.out.println("最后修改时间：" + new Date(basicFileAttributes.lastModifiedTime().toMillis()));
         System.out.println("是否隐藏："+ file.isHidden());
         System.out.println("是否可读：" + file.canRead());
         System.out.println("是否可写：" + file.canWrite());
-        System.out.println("文件的大小，所占的空间：" + file.length());
+        System.out.println("文件的大小，所占的空间：" + basicFileAttributes.size());
         //使用File类创建文件
 //        if (!file.exists()){  //如果文件不存在，则自己创建一个
 //            if (file.createNewFile())
@@ -46,7 +49,7 @@ public class FileDemo {
 //            file.createNewFile(); //创建目录
 //                System.out.println("文件重新创建成功");
 //
-        if (file.isDirectory()){
+        if (basicFileAttributes.isDirectory()){
             System.out.println(file.getAbsoluteFile() + "路径下的所有文件及文件夹");
             String[] fileNames = file.list();
             for (int i = 0; i < fileNames.length; i++) {
@@ -58,7 +61,7 @@ public class FileDemo {
 
         //补充：选学
         /**
-         * 我们自定义的文件名过滤器，必须实现FilenameFileter接口
+         * 我们自定义的文件名过滤器，必须实现FileFileter接口
          * @ author Tony
          * @ date 2022/6/25 11:05
          *  * @param args
