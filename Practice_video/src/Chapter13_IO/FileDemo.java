@@ -18,6 +18,7 @@ public class FileDemo {
 
 
     public static void main(String[] args) throws IOException {
+
         JFileChooser fileChooser = new JFileChooser(new File(".")); //设置文件对话框打开时的根目录
         fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);   //显示选择文件的对话框
         fileChooser.showOpenDialog(null);
@@ -52,8 +53,9 @@ public class FileDemo {
         if (basicFileAttributes.isDirectory()){
             System.out.println(file.getAbsoluteFile() + "路径下的所有文件及文件夹");
             String[] fileNames = file.list();
-            for (int i = 0; i < fileNames.length; i++) {
-                System.out.println(fileNames[i]);
+            assert fileNames != null;
+            for (String fileName : fileNames) {
+                System.out.println(fileName);
             }
         }
 
