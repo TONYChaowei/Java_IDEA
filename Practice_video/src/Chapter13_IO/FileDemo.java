@@ -1,6 +1,7 @@
 package Chapter13_IO;
 import javax.swing.*;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Date;
 /**演示File类的常用方法
@@ -24,7 +25,7 @@ public class FileDemo {
         System.out.println("绝对路径:" + file.getAbsoluteFile());
         System.out.println("路径：" + file.getPath());
         System.out.println("最后修改时间：" + new Date(file.lastModified()).toLocaleString());
-        System.out.println("是否隐藏："+ file.isHidden());
+        System.out.println("是否隐藏：" + file.isHidden());
         System.out.println("是否可读：" + file.canRead());
         System.out.println("是否可写：" + file.canWrite());
         System.out.println("文件的大小，所占的空间：" + file.length());
@@ -41,7 +42,7 @@ public class FileDemo {
 //            file.createNewFile(); //创建目录
 //                System.out.println("文件重新创建成功");
 //
-        if (file.isDirectory()){
+        if (file.isDirectory()) {
             System.out.println(file.getAbsoluteFile() + "路径下的所有文件及文件夹");
             String[] fileNames = file.list();
             for (int i = 0; i < fileNames.length; i++) {
@@ -49,22 +50,13 @@ public class FileDemo {
             }
         }
 
-
-
-        //补充：选学
-        /*
-         * 我们自定义的文件名过滤器，必须实现接口
-         * @ author Tony
-         * @ date 2022/6/25 11:05
-         *  * @param args
-         * @ return void
-         */
-
-
-
     }
+
     //mkdir() 创建此抽象路径名称指定的目录（及只能创建一级的目录，且需要存在父目录中）
     //mkdirs() 创建此抽象路径指定的目录，包括所有必须但不存在的父目录 （及可以创建多级目录，无论是否存在父目录）- 多级目录时使用
 
-}
 
+
+
+
+}
