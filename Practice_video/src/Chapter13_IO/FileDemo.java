@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-
 /**演示File类的常用方法
  * @ author:Tony
  * @ date 2022/6/24 9:47
@@ -53,7 +52,7 @@ public class FileDemo {
 
 
         //补充：选学
-        /**
+        /*
          * 我们自定义的文件名过滤器，必须实现接口
          * @ author Tony
          * @ date 2022/6/25 11:05
